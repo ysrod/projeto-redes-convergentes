@@ -199,6 +199,34 @@ Router(config-subif)#ip helper-address 192.168.10.2
 Router(config-subif)#exit
 Router(config)#
 
+--------------------------------------------------------------------
+
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface FastEthernet0/0
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface FastEthernet0/1
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface FastEthernet1/0
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface FastEthernet0/0
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#router rip
+Router(config-router)#network 192.168.20.0
+Router(config-router)#network 192.168.21.0
+Router(config-router)#network 1.0.0.0
+Router(config-router)#network 3.0.0.0
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+w
+Building configuration...
+[OK]
+Router#
 
 
 

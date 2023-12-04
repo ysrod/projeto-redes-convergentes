@@ -25,7 +25,7 @@ vlan dados 20
 rede: 192.168.20.0
 máscara: 255.255.255.0
 gateway: 192.168.20.1
-dhcp: 192.168.10.2
+dhcp: 192.168.10.2 [ip helper-address da rede1]
 
 vlan voz 21
 rede: 192.168.21.0
@@ -44,10 +44,14 @@ rede 3
 vlan dados 30
 rede: 192.168.30.0
 máscara: 255.255.255.0
+gateway: 192.168.30.1
+dhcp: 192.168.30.1 [roteador2]
 
 vlan voz 31
 rede: 192.168.31.0
 máscara: 255.255.255.0
+gateway: 192.168.31.1
+dhcp: 192.168.30.1
 
 router2
 porta 0/0 no shutdown

@@ -127,3 +127,23 @@ Building configuration...
 [OK]
 Switch#
 Switch#
+
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface range fastEthernet 0/4-5
+Switch(config-if-range)#no switchport access vlan 21
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport access vlan 20
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#switchport voice vlan 21
+Switch(config-if-range)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+w
+Building configuration...
+[OK]
+Switch#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up

@@ -290,3 +290,48 @@ Router(config-ephone-dn)#number 201
 Router(config-ephone-dn)#exit
 Router(config)#end
 Router#
+------------------------------------------------------------
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#dial-peer voice 1 voip
+Router(config-dial-peer)#destination-pattern 10
+Router(config-dial-peer)#session target ipv4:1.0.0.1
+Router(config-dial-peer)#exit
+Router(config)#dial-peer voice 2 voip
+Router(config-dial-peer)#destination-pattern 30
+Router(config-dial-peer)#session target ipv4:3.0.0.2
+Router(config-dial-peer)#exit
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+w
+Building configuration...
+[OK]
+Router#
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#dial-peer voice 1 voip
+Router(config-dial-peer)#destination-pattern 100
+Router(config-dial-peer)#session target ipv4:1.0.0.1
+Router(config-dial-peer)#exit
+Router(config)#dial-peer voice 2 voip
+Router(config-dial-peer)#destination-pattern 101
+Router(config-dial-peer)#session target ipv4:1.0.0.1
+Router(config-dial-peer)#exit
+Router(config)#dial-peer voice 3 voip
+Router(config-dial-peer)#destination-pattern 300
+Router(config-dial-peer)#session target ipv4:3.0.0.2
+Router(config-dial-peer)#exit
+Router(config)#dial-peer voice 4 voip
+Router(config-dial-peer)#destination-pattern 301
+Router(config-dial-peer)#session target ipv4:3.0.0.2
+Router(config-dial-peer)#exit
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+w
+Building configuration...
+[OK]
+Router#
